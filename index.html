@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+</head>
+<body class="bg-gray-100">
+<div id="flash-message" class="fixed top-6 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg opacity-0 transition-opacity duration-700 z-50">
+    Strong Password 🎉
+</div>
+
+<div class="flex items-center justify-center min-h-screen container">
+    <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-xl shadow-md">
+        <h2 class="text-2xl font-bold text-center text-gray-800">Login</h2>
+        <form class="space-y-5">
+            
+            <div class="relative">
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" id="password" placeholder="Enter password" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                <span class="absolute top-10 right-3 cursor-pointer" onclick="togglePasswordVisibility()">
+                    👁️
+                </span>
+            </div>
+            <div class="flex justify-between items-center text-sm">
+                <a href="#" class="text-blue-600 hover:underline">Forgot password?</a>
+                <span id="strength-text" class="text-gray-500">Password Strength</span>
+            </div>
+            <div class="w-full h-2 bg-gray-200 rounded">
+                <div id="strength-meter-fill" class="h-full bg-green-500 rounded transition-all duration-500" style="width: 0%;"></div>
+            </div>
+            <ul class="space-y-1 text-sm text-gray-600">
+                <li id="length" class="flex items-center gap-2">
+                    <span class="icon transition duration-300 ease-in-out transform">❌</span>
+                    At least 8 characters
+                </li>
+                <li id="uppercase" class="flex items-center gap-2">
+                    <span class="icon transition duration-300 ease-in-out transform">❌</span>
+                    At least one uppercase letter
+                </li>
+                <li id="lowercase" class="flex items-center gap-2">
+                    <span class="icon transition duration-300 ease-in-out transform">❌</span>
+                    At least one lowercase letter
+                </li>
+                <li id="number" class="flex items-center gap-2">
+                    <span class="icon transition duration-300 ease-in-out transform">❌</span>
+                    At least one number
+                </li>
+                <li id="specialChar" class="flex items-center gap-2">
+                    <span class="icon transition duration-300 ease-in-out transform">❌</span>
+                    At least one special character
+                </li>
+            </ul>
+            <button type="submit" class="w-full px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700">Login</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
